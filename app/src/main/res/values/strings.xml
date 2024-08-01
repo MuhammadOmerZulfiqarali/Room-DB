@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Room-DB</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textview">TextView</string>
+    <string name="_25">(25)</string>
+    <string name="doe">Doe</string>
+    <string name="john">John</string>
+    <string name="_1">1</string>
+</resources>

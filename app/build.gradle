@@ -1,0 +1,62 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id 'androidx.navigation.safeargs.kotlin'
+
+}
+
+android {
+    namespace 'com.example.room_db'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.room_db"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation libs.kotlin.stdlib
+    implementation libs.androidx.core.ktx.v190
+    implementation libs.androidx.appcompat.v151
+    implementation libs.material.v170
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx.v251
+    implementation libs.androidx.room.runtime.v251
+    implementation libs.androidx.annotation
+    kapt 'androidx.room:room-compiler:2.5.1'
+    implementation libs.androidx.navigation.fragment.ktx.v250
+    implementation libs.androidx.navigation.ui.ktx.v250
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit.v114
+    androidTestImplementation libs.androidx.espresso.core.v350
+    implementation libs.kotlinx.coroutines.core.v180
+    implementation libs.kotlinx.coroutines.android.v180
+
+
+}
